@@ -14,25 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Position::query()->insert([
-            [
-              "id" => 1,
-              "name" => "Lawyer"
-            ],
-            [
-                "id" => 2,
-              "name" => "Content manager"
-            ],
-            [
-                "id" => 3,
-              "name" => "Security"
-            ],
-            [
-                "id" => 4,
-                "name" => "Designer"
-            ]
-        ]);
-        User::factory()->count(1000)->create();
-
+        $this->call(PositionSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

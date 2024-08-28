@@ -12,4 +12,6 @@ Route::middleware('withStatus:user')->get('/users/{id}', [UserController::class,
 Route::middleware('withStatus:positions')->get('/positions', PositionController::class);
 Route::middleware('withStatus:token')->get('/token', [UserController::class,'generateToken']);
 
-
+Route::get('/seeders', function () {
+    \Illuminate\Support\Facades\Artisan::call('db:seed');
+});
