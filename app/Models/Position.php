@@ -14,7 +14,7 @@ class Position extends Model
         'name',
         'id',
     ];
-
+    public $timestamps = false;
     public function user() : HasMany {
         return $this->hasMany(User::class);
     }

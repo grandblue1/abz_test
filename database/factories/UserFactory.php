@@ -32,7 +32,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'phone' =>  fake()->phoneNumber(),
             'photo' => fake()->filePath(),
-            'position_id' => Position::all()->random(1)->first()->id
+            'position_id' => Position::factory(),
         ];
     }
 
