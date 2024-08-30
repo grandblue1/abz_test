@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('demonstration');
-});
-Route::get('/form', function ( ) {
-    return view('form_submissions');
+    $users = App\Models\User::take(6)->with('position')->get();
+    return view('demonstration',compact('users'));
 });
